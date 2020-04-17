@@ -1,5 +1,6 @@
 <template>                  <!--All markup code must be written within template tag-->
     <lightning-card title="Hello World: LWC">
-        <div>Hellow World</div>
+        <div>Hello {dynamicGreeting}</div>
+        <lightning-input label="Greeting" onchange={greetingChangeHandler}></lightning-input>
     </lightning-card>
 </template>
