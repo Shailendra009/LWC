@@ -1,0 +1,12 @@
+.greeting-class{
+    color: cornflowerblue;
+}
+
+div{
+    border: 2px solid teal;
+}
+
+/* :host used in css file to select complete component itself i.e. to apply something for the whole Template(html file) */
+:host{
+    border: 3px solid red;
+}
