@@ -4,3 +4,7 @@ lightning-layout-item{
     margin-top: 0px;
     padding-top: 0px;
 }
+
+lightning-formatted-text{
+    font-weight: bold;
+}

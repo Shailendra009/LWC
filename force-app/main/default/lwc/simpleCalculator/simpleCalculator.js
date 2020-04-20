@@ -2,6 +2,8 @@ import { LightningElement, track } from 'lwc';
 
 export default class SimpleCalculator extends LightningElement {
     @track currentResult;
+    @track previousResults = [];
+    @track showPreviousResults = false;
 
     firstNumber;
     secondNumber;
@@ -26,6 +28,9 @@ export default class SimpleCalculator extends LightningElement {
         // Template Literals are enclosed by the back-tick (` `) or grave accent .
         // Template literals can contain placeholders indicated by the dollar sign and curly braces (${expression}).
         this.currentResult = `Result of ${firstN}+${secondN} is ${firstN+secondN}`;
+        
+        // use push() method to add an item in an array.
+        this.previousResults.push(this.currentResult);
     }
 
     subHandler(event){
@@ -36,6 +41,8 @@ export default class SimpleCalculator extends LightningElement {
         //this.currentResult = 'Result of '+firstN+'-'+secondN+' is '+(firstN-secondN);
         
         this.currentResult = `Result of ${firstN}-${secondN} is ${firstN-secondN}`;
+
+        this.previousResults.push(this.currentResult);
     }
 
     mulHandler(event){
@@ -46,6 +53,8 @@ export default class SimpleCalculator extends LightningElement {
         //this.currentResult = 'Result of '+firstN+'*'+secondN+' is '+(firstN*secondN);
         
         this.currentResult = `Result of ${firstN}*${secondN} is ${firstN*secondN}`;
+
+        this.previousResults.push(this.currentResult);
     }
 
     divHandler(event){
@@ -56,5 +65,11 @@ export default class SimpleCalculator extends LightningElement {
         //this.currentResult = 'Result of '+firstN+'/'+secondN+' is '+(firstN/secondN);
 
         this.currentResult = `Result of ${firstN}/${secondN} is ${firstN/secondN}`;
+
+        this.previousResults.push(this.currentResult);
+    }
+
+    showPreviousResultToggle(event){
+        this.showPreviousResults = event.target.checked;
     }
 }
