@@ -3,7 +3,19 @@
     <template if:true={displayDiv}>
         <div>I am True</div>
     </template>
-    <template if:false={displayDiv}>
+    <!--template if:false={displayDiv}>
         <div>I am False</div>
+    </template-->
+    <template for:each={cityList} for:item="city">
+        <p key={city}>{city}</p>        <!--1st nested element should also have key and it should have unique value-->
+    </template>
+
+    <h1><b>Below is an example of Iterator Directive</b></h1>
+
+    <!--Iterator can be very useful if you want to apply special rendering on your elements dynamically based on 
+    their index. It has few useful properties like it.first, it.last and it.index-->
+
+    <template iterator:it={cityList}>
+        <p key={it.value}>{it.value}</p>
     </template>
 </template>
