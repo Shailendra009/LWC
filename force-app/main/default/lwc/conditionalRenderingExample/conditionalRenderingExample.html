@@ -1,4 +1,5 @@
 <template>
+    <lightning-card title="Conditional Rendering">
     <lightning-input type="checkbox" label="Show Div" onchange={showDivHandler}></lightning-input>
     <template if:true={displayDiv}>
         <div>I am True</div>
@@ -18,4 +19,5 @@
     <template iterator:it={cityList}>
         <p key={it.value}>{it.value}</p>
     </template>
+    </lightning-card>
 </template>
