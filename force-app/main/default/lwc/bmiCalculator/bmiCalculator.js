@@ -22,7 +22,7 @@ export default class BmiCalculator extends LightningElement {
         this.height = parseFloat(event.target.value);
     }
     calculateBMI(){
-        this.bmi = this.weight / (this.weight + this.height);
+        this.bmi = this.weight / (this.height * this.height);
     }
 
 }
