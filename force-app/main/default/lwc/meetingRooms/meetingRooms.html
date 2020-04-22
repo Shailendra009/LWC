@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Meeting Rooms">
+        <ul>
+            <template for:each={meetingRoomInfo} for:item="room">
+                <li key={room.roomName} style="padding: 10px;">
+                    <!-- use kebab-case instead of camelCase while using LWC inside other component -->
+                    <c-meeting-room meeting-room-info={room}></c-meeting-room>
+                    <!-- using public properties, here we are passing values from parent to child component -->
+                </li>
+            </template>
+        </ul>
+    </lightning-card>
+</template>
