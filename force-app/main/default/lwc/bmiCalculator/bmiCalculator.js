@@ -26,8 +26,16 @@ export default class BmiCalculator extends LightningElement {
             this.bmi = this.weight / (this.height * this.height);
         }catch(error){
             this.bmi = undefined;
+        }   
+    }
+    
+    // Javascript getters can be used to compute the value of property.
+    get bmiValue(){
+        if(this.bmi == undefined){
+            return "";
+        }else{
+            return `Your BMI is ${this.bmi}`;
         }
-        
     }
 
 }
