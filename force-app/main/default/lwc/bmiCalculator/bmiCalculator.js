@@ -12,6 +12,8 @@ export default class BmiCalculator extends LightningElement {
 
     // Private Properties can be made reactive by using @track decorator which develops data binding behind 
     // the scene and update the template on their value change
+
+    // Limitation of Private properties: They can only be accessed from the same component
     weight;
     height;
     @track bmi;
