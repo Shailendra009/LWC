@@ -4,9 +4,19 @@
             <template for:each={meetingRoomInfo} for:item="room">
                 <li key={room.roomName} style="padding: 10px;">
                     <!-- use kebab-case instead of camelCase while using LWC inside other component -->
-                    <c-meeting-room meeting-room-info={room} show-room-info></c-meeting-room>
+                    <c-meeting-room meeting-room-info={room} show-room-info>
+                        <!-- Using Slots-->
+                        <!--Slots are used to pass additional markup from parent to Child component
+                         for e.g. here we are passing lightning-tile markup-->
+                        <lightning-tile label={room.roomName} href="/path/to/somewhere" slot="roomInfo">  <!--Use slot attribute to pass markup inside a named slot-->
+                            <p class="slds-truncate" title={room.roomCapacity}>Room Capacity: {room.roomCapacity}</p>
+                        </lightning-tile>
+                        <div>Additional Markup will go in Unnamed Slot</div>
+                    </c-meeting-room>
                     <!-- Here we are setting 'show-room-info' as true by just passing the attribute-->
                     <!-- using public properties, here we are passing values from parent to child component -->
+
+                    
                 </li>
             </template>
         </ul>

@@ -1,9 +1,17 @@
 <template>
     <template if:true={showRoomInfo}>
         <div class="slds-p-around_medium lgc-bg">
-            <lightning-tile label={meetingRoomInfo.roomName} href="/path/to/somewhere">
+            <!--lightning-tile label={meetingRoomInfo.roomName} href="/path/to/somewhere">
                 <p class="slds-truncate" title={meetingRoomInfo.roomCapacity}>Room Capacity: {meetingRoomInfo.roomCapacity}</p>
-            </lightning-tile>
+            </lightning-tile-->
+            <slot name="roomInfo"></slot> <!--Named Slot-->
+            <slot></slot>      <!--UnNamed Slot-->
+            <slot></slot>  <!--Avoid using more than one unnamed slot because it insert markup into all unnamed slot -->
         </div>
     </template>
 </template>
+
+<!--    Difference Slots V/S Public Properties
+    Slots: Use them to pass additional markup to child component
+    Public Properties: Use to pass additional data to child and run some logic
+-->
