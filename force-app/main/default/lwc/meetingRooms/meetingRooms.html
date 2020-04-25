@@ -4,7 +4,8 @@
             <template for:each={meetingRoomInfo} for:item="room">
                 <li key={room.roomName} style="padding: 10px;">
                     <!-- use kebab-case instead of camelCase while using LWC inside other component -->
-                    <c-meeting-room meeting-room-info={room}></c-meeting-room>
+                    <c-meeting-room meeting-room-info={room} show-room-info></c-meeting-room>
+                    <!-- Here we are setting 'show-room-info' as true by just passing the attribute-->
                     <!-- using public properties, here we are passing values from parent to child component -->
                 </li>
             </template>

@@ -12,4 +12,6 @@ export default class MeetingRoom extends LightningElement {
 // e.g. Here we can set default value for 'meetingRoomInfo' and can not modify it later on. 
 // These values can come from parent component(meetingRooms).
 
+    @api showRoomInfo = false;
+
 }
