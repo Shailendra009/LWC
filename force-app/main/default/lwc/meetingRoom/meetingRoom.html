@@ -1,12 +1,15 @@
 <template>
     <template if:true={showRoomInfo}>
-        <div class="slds-p-around_medium lgc-bg">
-            <!--lightning-tile label={meetingRoomInfo.roomName} href="/path/to/somewhere">
+        <div class="slds-p-around_medium lgc-bg" >   <!-- onclick={tileClickHandler}: To be used to handle event through markup -->
+            <lightning-tile label={meetingRoomInfo.roomName} href="/path/to/somewhere">
                 <p class="slds-truncate" title={meetingRoomInfo.roomCapacity}>Room Capacity: {meetingRoomInfo.roomCapacity}</p>
-            </lightning-tile-->
-            <slot name="roomInfo"></slot> <!--Named Slot-->
-            <slot></slot>      <!--UnNamed Slot-->
-            <slot></slot>  <!--Avoid using more than one unnamed slot because it insert markup into all unnamed slot -->
+            </lightning-tile>
+
+<!-- Commenting line 7-10 which is used for slot
+            <slot name="roomInfo"></slot> --><!--Named Slot-->
+        <!--   <slot></slot>     -->  <!--UnNamed Slot-->
+         <!--   <slot></slot> --> <!--Avoid using more than one unnamed slot because it insert markup into all unnamed slot -->
+
         </div>
     </template>
 </template>
