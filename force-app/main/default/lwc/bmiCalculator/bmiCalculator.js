@@ -1,4 +1,5 @@
 import { LightningElement, track } from 'lwc';
+import { getBMI } from 'c/bmiJsModule';   // c represents namespace
 
 export default class BmiCalculator extends LightningElement {
     // Private Properties are non-reactive in nature, which means they don't create data binding and doesn't 
@@ -24,11 +25,7 @@ export default class BmiCalculator extends LightningElement {
         this.height = parseFloat(event.target.value);
     }
     calculateBMI(){
-        try{
-            this.bmi = this.weight / (this.height * this.height);
-        }catch(error){
-            this.bmi = undefined;
-        }   
+        this.bmi = getBMI(this.weight,this.height);
     }
     
     // Javascript getters can be used to compute the value of property.
