@@ -1,4 +1,6 @@
-import { LightningElement, api } from 'lwc';
+import { LightningElement, api, wire } from 'lwc';
+import { fireEvent } from 'c/pubsub';   // To use 'fireEvent' method of pubsub module
+import { CurrentPageReference } from 'lightning/navigation';  // To get the actual page reference
 
 export default class MeetingRoom extends LightningElement {
 
@@ -13,6 +15,9 @@ export default class MeetingRoom extends LightningElement {
 // These values can come from parent component(meetingRooms).
 
     @api showRoomInfo = false;
+
+    @wire(CurrentPageReference) pageReference;   // current page reference
+
     tileClickHandler(){
         // Declare/Register the event
         const tileClicked = new CustomEvent('tileclick', {detail: this.meetingRoomInfo, bubbles : true});
@@ -28,6 +33,10 @@ export default class MeetingRoom extends LightningElement {
 
         // Custom Events can only be handled by the component itself or the parent component
         // Custom Event is same as 'Component Event' in Lightning Component 
+
+        fireEvent(this.pageReference, 'pubsubtileclick', this.meetingRoomInfo);
+        // Firing/Publish 'pubsubtileclick' event using 'fireEvent' method of 'pubsub' module
+
     }
 
 }

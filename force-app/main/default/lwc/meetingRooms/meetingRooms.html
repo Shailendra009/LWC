@@ -6,7 +6,7 @@
                     <template for:each={meetingRoomInfo} for:item="room">
                         <li key={room.roomName} style="padding: 10px;">
                             <!-- use kebab-case instead of camelCase while using LWC inside other component -->
-                            <c-meeting-room meeting-room-info={room} show-room-info ontileclick={onTileSelectHandler}>
+                            <c-meeting-room meeting-room-info={room} show-room-info > <!-- ontileclick={onTileSelectHandler}: To be used to handle event through markup -->
                             
                             <!--Commenting Slots Part-->
                                 <!-- Using Slots-->
