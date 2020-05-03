@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Account Creation Using LDS" >
+        <lightning-layout>
+            <lightning-layout-item size="6" padding="around-small">
+                <lightning-card title="Create a New Account" icon-name="standard:record">
+                    <lightning-input name="Account Name" label="Name" onchange={accountNameChangeHandler}></lightning-input>
+                    <lightning-input name="Account Phone" label="Phone" type="phone" onchange={accountPhoneChangeHandler}></lightning-input>
+                    <lightning-input name="Account Website" label="Website" type="url" onchange={accountWebsiteChangeHandler}></lightning-input>
+                    <div class="accountButton">
+                        <lightning-button label="Create Account" onclick={createAccount} variant="brand"></lightning-button>
+                    </div>
+                </lightning-card>
+            </lightning-layout-item>
+            <lightning-layout-item size="6" padding="around-small">
+
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>
