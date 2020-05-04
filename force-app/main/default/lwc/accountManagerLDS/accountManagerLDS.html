@@ -12,7 +12,13 @@
                 </lightning-card>
             </lightning-layout-item>
             <lightning-layout-item size="6" padding="around-small">
-
+                <lightning-card title="View Account Record">
+                    <div class="slds-box">
+                        <p>Name : <lightning-formatted-text value={retAccountName}></lightning-formatted-text></p>
+                        <p>Phone : <lightning-formatted-phone value={retAccountPhone}></lightning-formatted-phone></p>
+                        <p>Website : <lightning-formatted-url value={retAccountWebsite}></lightning-formatted-url></p>
+                    </div>
+                </lightning-card>
             </lightning-layout-item>
         </lightning-layout>
     </lightning-card>
