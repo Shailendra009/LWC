@@ -3,9 +3,19 @@
     <apiVersion>48.0</apiVersion>
     <isExposed>true</isExposed>
     <description>Create, Edit and View Account Record using LDS Record Form</description>
+    <masterLabel>Generic Record Handler</masterLabel>
     <targets>               <!--target can be used to define where this lwc will be used-->
         <target>lightning__RecordPage</target>
         <target>lightning__AppPage</target>
         <target>lightning__HomePage</target>
+        <target>lightningCommunity_Page</target>
+        <target>lightningCommunity_Default</target>
     </targets>
+    <targetConfigs>
+        <targetConfig targets='lightning__AppPage, lightning__HomePage'> <!-- To use 'objectApiName' and 'recordId' on 
+                                'lightning__AppPage' and 'lightning__HomePage'-->
+            <property name="objectApiName" type="String" datasource="Account, Contact, Opportunity" default="Account"></property>
+            <!-- To use given datasource as picklist in component-->
+        </targetConfig>
+    </targetConfigs>
 </LightningComponentBundle>
