@@ -8,9 +8,13 @@
                  If 'record-id' is blank then record form will be loaded in 'Create' mode  
                  'onsuccess': To handle the success response in record form to get recordId from server-->
 
-            <lightning-record-form object-api-name="Account" record-id={recordId} columns="2" mode="edit" 
-                layout-type="Full" onsuccess={handleSuccess}></lightning-record-form>        
+            <!--lightning-record-form object-api-name="Account" record-id={recordId} columns="2" mode="edit" 
+                layout-type="Full" onsuccess={handleSuccess}></lightning-record-form -->        
                 
+            <!-- To get Record Id and Object Name dynamically, we can use public properties (@api decorator) -->
+            <lightning-record-form object-api-name={objectApiName} record-id={recordId} columns="2" mode="edit" 
+                layout-type="Full" onsuccess={handleSuccess}></lightning-record-form>
+
                  <!-- 'Mode':
                  readonly : For only viewing the record, can't make form editable
                  view : For viewing the record, can make the form editable

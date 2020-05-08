@@ -1,4 +1,4 @@
-import { LightningElement } from 'lwc';
+import { LightningElement, api } from 'lwc';
 
 /*  
 we don't need to import fields from salesforce schema while using 'layout-type = Full/Compact' instead of 'fields'
@@ -11,8 +11,15 @@ import WEBSITE_FIELD from '@salesforce/schema/Account.Website';
 
 export default class AccountRecordForm extends LightningElement {
     
-    recordId;   // Before Spring'20, we need to import track decorator to make varible(Primitive data types) reactive
+    // recordId;   // Before Spring'20, we need to import track decorator to make varible(Primitive data types) reactive
                 // After Spring'20 @track decorator can be used for non-primitive e.g. Array, Objects etc.
+
+    /*
+        The framework can pass the values to 'objectApiName' and 'recordId' property only on 'App Builder Record Page'.
+        The value of 'objectApiName' and 'recordId' on 'App Builder Home Page' and 'App Builder App Page' will be null.
+    */
+    @api objectApiName;
+    @api recordId;
 
     //fieldArray = ['Name', 'Phone', 'Website'];
     // fieldArray = [NAME_FIELD, PHONE_FIELD, WEBSITE_FIELD];  // used when using 'fields' instead of 'layout-type = Full/Compact'
