@@ -8,14 +8,14 @@
         <target>lightning__RecordPage</target>
         <target>lightning__AppPage</target>
         <target>lightning__HomePage</target>
-        <target>lightningCommunity_Page</target>
-        <target>lightningCommunity_Default</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
     </targets>
     <targetConfigs>
         <targetConfig targets='lightning__AppPage, lightning__HomePage'> <!-- To use 'objectApiName' and 'recordId' on 
                                 'lightning__AppPage' and 'lightning__HomePage'-->
             <property name="objectApiName" type="String" datasource="Account, Contact, Opportunity" default="Account"></property>
-            <!-- To use given datasource as picklist in component-->
+            <!-- To use given datasource as picklist in Lightning Component Builder-->
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>
