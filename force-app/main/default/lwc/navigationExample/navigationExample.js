@@ -67,11 +67,11 @@ export default class NavigationExample extends NavigationMixin(LightningElement)
         });
     }
 
-    previewFile(){
+    navigateToHome(){
         this[NavigationMixin.Navigate]({
             type : 'standard__namedPage',
             attributes : {
-                pageName : 'filePreview'   
+                pageName : 'home'     // filePreview
             },
         /*    state : {
                 recordIds : '',
