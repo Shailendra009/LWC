@@ -1,8 +1,8 @@
 {
-  "name": "salesforce-app",
+  "name": "lwcsessions",
   "private": true,
   "version": "1.0.0",
-  "description": "Salesforce App",
+  "description": "Unit Testing for LWC Sessions Code",
   "scripts": {
     "lint": "npm run lint:lwc",
     "lint:lwc": "eslint force-app/main/default/lwc",
@@ -17,9 +17,21 @@
   "devDependencies": {
     "@prettier/plugin-xml": "^0.7.0",
     "@salesforce/eslint-config-lwc": "^0.4.0",
+    "@salesforce/lwc-jest": "^0.6.2",
     "@salesforce/sfdx-lwc-jest": "^0.7.0",
     "eslint": "^5.16.0",
     "prettier": "^1.19.1",
     "prettier-plugin-apex": "^1.0.0"
-  }
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shailendra009/LWC.git"
+  },
+  "author": "Shailendra Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shailendra009/LWC/issues"
+  },
+  "homepage": "https://github.com/Shailendra009/LWC#readme"
 }
