@@ -1,0 +1,11 @@
+Jest Framework: Framework to test UI component
+
+Jest Test is used to write unit tests for all Lightning web components
+
+JTest (Jest Test) Setup:
+
+-> Install node and npm
+-> Create package.json file for testing using command: 'npm init'
+-> Install npm using command: 'npm install'
+-> Install lwc jest framework using command:'npm install @salesforce/lwc-jest --save-dev'
+-> To remove vulnerabilities if any : 'npm audit fix'
