@@ -8,5 +8,8 @@ package.xml
 **/jsconfig.json
 **/.eslintrc.json
 
-# LWC Jest
+# Unit Test files are needed only in local machine to test code, salesforce org doesn't accepts test files
+# Hence we are including "__tests__" folder  to avoid pushing these files to salesforce org
+
+# LWC Jest                
 **/__tests__/**
