@@ -33,8 +33,7 @@ export default class CarSearchForm extends NavigationMixin(LightningElement) {
                 carType.label = element.Name;
                 this.carTypes.push(carType);
             });
-            //console.log("Response from server: "+this.carTypes.label);
-            this.showToast('Car Types loaded', data.label +' : Car Types Loaded', 'success');
+            this.showToast('Success', 'Car Types Loaded', 'success');
         }else if(error){
             this.showToast('ERROR', error.body.messsage, 'error');
         }
