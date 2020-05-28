@@ -4,8 +4,14 @@ import { ShowToastEvent} from 'lightning/platformShowToastEvent';
 
 export default class CarSearchResult extends LightningElement {
 
+    /* Public properties are annotated with @api decorator to expose it to parent component i.e. Parent to Child communication */
     @api carTypeId;
 
+    /* 
+        Before Spring'20, we need to import '@track' decorator to make varible(Primitive data types) reactive
+        After Spring'20 @track decorator can be used for non-primitive e.g. Array, Objects etc.
+        that's why here we have used @track decorator for carsArray 
+    */
     @track carsArray;
 
     /*
@@ -13,6 +19,13 @@ export default class CarSearchResult extends LightningElement {
      this is because maybe wire adapter may get fired before component initialisation
      To remove this error and to make 'carTypeId' reactive we can use '{carTypeId : '$carTypeId'}'
      */
+
+     /*
+        Method must be 'cacheable' to get called through 'Wire Adapter'.
+        Here 'WiredCars' holds the value return from 'getCars' methods. 
+        The Wire service either provisions the list of WiredCars to the 'WiredCars.data' property,
+            or returns an error to the 'WiredCars.error' property
+    */
 
     @wire(getCar, {carTypeId : '$carTypeId'})   
     WiredCars({data, error}){    // This can only hold 'data' and 'error' as parameter

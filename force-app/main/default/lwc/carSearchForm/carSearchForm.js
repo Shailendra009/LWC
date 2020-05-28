@@ -19,7 +19,7 @@ export default class CarSearchForm extends NavigationMixin(LightningElement) {
     /*
         Method must be 'cacheable' to get called through 'Wire Adapter'.
         Here 'wiredCarTypes' holds the value return from 'getCarTypes' methods. 
-        The Wire service either provisions the list of accounts to the 'wiredCarTypes.data' property,
+        The Wire service either provisions the list of wiredCarTypes to the 'wiredCarTypes.data' property,
             or returns an error to the 'wiredCarTypes.error' property
     */
 
