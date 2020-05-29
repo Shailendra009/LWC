@@ -2,7 +2,7 @@ import { LightningElement, api } from 'lwc';
 
 export default class CarTile extends LightningElement {
 
-    @api car;
+    @api car;           // used to get car details from their parent component
     @api selectedCarId;  // used to accept carId from their parent component
 
     handleCarSelect(event){
