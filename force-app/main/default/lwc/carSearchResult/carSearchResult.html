@@ -3,8 +3,13 @@
         <template if:true={carsFound}>
             <template for:each={carsArray} for:item="car">
                 <lightning-layout-item key={car.Id} padding="around-small" size="6" 
-                    small-device-size="6" large-device-size="6" medium-device-size="6">
-                    {car.Name}
+                    small-device-size="6" large-device-size="3" medium-device-size="4">
+                    <c-car-tile car={car} oncarselect={carSelectHandler} selected-car-id={selectedCarId}></c-car-tile>
+                    <!-- 'oncarselect={carSelectHandler}' is used to handle 'carSelect' CustomEvent
+                        fired by their child component 'carTile' 
+                        'selected-car-id={selectedCarId}' is used for parent to child communication
+                        just like attribute in lightning component
+                    -->
                 </lightning-layout-item>
             </template>
         </template>

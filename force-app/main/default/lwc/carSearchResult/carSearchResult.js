@@ -13,6 +13,7 @@ export default class CarSearchResult extends LightningElement {
         that's why here we have used @track decorator for carsArray 
     */
     @track carsArray;
+    selectedCarId;
 
     /*
      if we are using '{carTypeId : this.carTypeId}' we will get [cannot read property 'carTypeId' of undefined]
@@ -55,6 +56,11 @@ export default class CarSearchResult extends LightningElement {
         console.log('Cars Not Available'+JSON.stringify(this.carsArray));
         console.log('CarTypeId : '+this.carTypeId);
         return false;
+    }
+
+    carSelectHandler(event){
+        const carId = event.detail;   // to get 'carId' from child component 'carTile'
+        this.selectedCarId = carId;
     }
 
 
