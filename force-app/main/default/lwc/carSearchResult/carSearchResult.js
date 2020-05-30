@@ -5,11 +5,17 @@ import { ShowToastEvent} from 'lightning/platformShowToastEvent';
 export default class CarSearchResult extends LightningElement {
 
     /* Public properties are annotated with @api decorator to expose it to parent component i.e. Parent to Child communication */
+    /*
+        Use @api decorator to define public properties in your component. Values of these properties can be 
+        supplied by parent component but you can also set default value
+        public properties are reactive. Updating a new value in parent component, automatically updates child component.
+        Use public properties whenever you need to pass values from one component to another.
+    */
     @api carTypeId;
 
     /* 
         Before Spring'20, we need to import '@track' decorator to make varible(Primitive data types) reactive
-        After Spring'20 @track decorator can be used for non-primitive e.g. Array, Objects etc.
+        But After Spring'20 @track decorator is needed for non-primitive e.g. Array, Objects etc. only
         that's why here we have used @track decorator for carsArray 
     */
     @track carsArray;
@@ -22,7 +28,7 @@ export default class CarSearchResult extends LightningElement {
      */
 
      /*
-        Method must be 'cacheable' to get called through 'Wire Adapter'.
+        Apex Method must be 'cacheable' to get called through 'Wire Adapter'.
         Here 'WiredCars' holds the value return from 'getCars' methods. 
         The Wire service either provisions the list of WiredCars to the 'WiredCars.data' property,
             or returns an error to the 'WiredCars.error' property
@@ -47,6 +53,9 @@ export default class CarSearchResult extends LightningElement {
         this.dispatchEvent(toastEvent);
     }
 
+    /**
+     * Here getter is used to return true to the markup if there is data returned from the server
+     */
     get carsFound(){
         if(this.carsArray){
             console.log('Cars Available'+JSON.stringify(this.carsArray));
