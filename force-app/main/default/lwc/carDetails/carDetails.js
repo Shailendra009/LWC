@@ -92,4 +92,16 @@ export default class CarDetails extends LightningElement {
         }
         return false;
     }
+
+    /* 
+        Calling child component (carExperiences) method 'getCarExperiences' from parent component 'carDetails' using @api decorator
+    */
+    experienceAddedHandler(){
+        const carExperienceComponent = this.template.querySelector('c-car-experiences');
+        if(carExperienceComponent){
+            carExperienceComponent.getCarExperiences();
+        }
+
+        this.selectedTabValue = "viewexperiencestab";
+    }
 }
